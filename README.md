@@ -42,7 +42,6 @@
 | ---------------- | ----------- | ------------------------------ |
 | user_id          |   integer   | foreign_key: true              |
 | item_id          |   integer   | foreign_key: true              |
-| address_id       |   integer   | foreign_key: true              |
 
 
 - belongs_to :user
@@ -61,6 +60,7 @@
 | house_number     |   string    | null: false                    |
 | building_name    |   string    |                                |
 | tell_number      |   integer   | null: false                    |
+| customer_id      |   integer   | foreign_key: true              |
 
 - belongs_to :customer
 
