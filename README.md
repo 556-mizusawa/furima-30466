@@ -27,7 +27,7 @@
 | genre_id         |  integer   | null: false                    |
 | status_id        |  integer   | null: false                    |
 | delivery_fee_id  |  integer   | null: false                    |
-| consignor_id     |  integer   | null: false                    |
+| prefecture_id    |  integer   | null: false                    |
 | days_id          |  integer   | null: false                    |
 | price            |  integer   | null: false                    |
 | user             | references | null: false, foreign_key: true |
@@ -42,6 +42,8 @@
 | ---------------- | ----------- | ------------------------------ |
 | user_id          |   integer   | foreign_key: true              |
 | item_id          |   integer   | foreign_key: true              |
+| address_id       |   integer   | foreign_key: true              |
+
 
 - belongs_to :user
 - belongs_to :item
