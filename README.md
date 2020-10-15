@@ -14,7 +14,7 @@
 | birthday             |  date  | null: false |
 
 - has_many :items
-- has_one :customer
+- has_many :customers
 
 
 
@@ -25,22 +25,23 @@
 | title            |   string   | null: false                    |
 | catch_copy       |    text    | null: false                    |
 | genre_id         |  integer   | null: false                    |
-| item_status_id   |  integer   | null: false                    |
+| status_id        |  integer   | null: false                    |
 | delivery_fee_id  |  integer   | null: false                    |
 | consignor_id     |  integer   | null: false                    |
+| days_id          |  integer   | null: false                    |
 | price            |  integer   | null: false                    |
 | user             | references | null: false, foreign_key: true |
 
-- has_one :customer
+- has_one :customers
 - belongs_to :user 
 
 
-## customer テーブル
+## customers テーブル
 
 | Column           | Type        | Options                        |
 | ---------------- | ----------- | ------------------------------ |
-| user             | references  | null: false, foreign_key: true |
-| item             | references  | null: false, foreign_key: true |
+| user_id          |   integer   | foreign_key: true              |
+| item_id          |   integer   | foreign_key: true              |
 
 - belongs_to :user
 - belongs_to :item
