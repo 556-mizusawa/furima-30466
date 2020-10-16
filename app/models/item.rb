@@ -1,13 +1,14 @@
 class Item < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :genre
+
   belongs_to :user
   has_one_attached :image
 
-  validates :title,          presence: true
-  validates :catch_copy,     presence: true
-  validates :genre_id,       presence: true
-  validates :status_id,      presence: true
-  validates :delivery_id,    presence: true
-  validates :prefecture_id,  presence: true
-  validates :days_id,        presence: true
-  validates :price,          presence: true
+  #通常バリデーション 
+  validates :title, :catch_copy, :genre_id, :status_id, :delivery_id, :prefecture_id, :days_id, :price, presence: true
+  
+  #ActiveHash_idバリデーション
+  validates :genre_id, numericality: { other_than: 1 } 
 end
+
