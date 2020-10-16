@@ -1,14 +1,14 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :genre, :status
+  belongs_to_active_hash :genre, :status, :delivery_fee,
 
   belongs_to :user
   has_one_attached :image
 
   #通常バリデーション 
-  validates :title, :catch_copy, :genre_id, :status_id, :delivery_id, :prefecture_id, :days_id, :price, presence: true
+  validates :title, :catch_copy, :genre_id, :status_id, :delivery_fee_id, :prefecture_id, :days_id, :price, presence: true
   
   #ActiveHash_idバリデーション
-  validates :genre_id, :status_id,  numericality: { other_than: 1 } 
+  validates :genre_id, :status_id, :delivery_fee_id, numericality: { other_than: 1 } 
 end
 
