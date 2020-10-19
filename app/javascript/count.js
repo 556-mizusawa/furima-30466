@@ -11,5 +11,5 @@ function count() {
   });
 }
 
-addEventListener("load", count);
+addEventListener("keydown", count);
 
