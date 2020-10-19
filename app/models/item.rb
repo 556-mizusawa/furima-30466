@@ -14,11 +14,11 @@ class Item < ApplicationRecord
     validates :image
     validates :title
     validates :catch_copy 
-    validates :genre
-    validates :status
-    validates :delivery_fee
-    validates :prefecture
-    validates :day
+    validates :genre_id
+    validates :status_id
+    validates :delivery_fee_id
+    validates :prefecture_id
+    validates :day_id
     validates :price, format: {with: /\A[0-9]+\z/, message: "is invalid. Input half-width characters."}
   end
 
