@@ -36,7 +36,7 @@
 - belongs_to :user 
 
 
-## customers テーブル
+## orders テーブル
 
 | Column           | Type        | Options                        |
 | ---------------- | ----------- | ------------------------------ |
@@ -62,5 +62,5 @@
 | tell_number      |   integer   | null: false                    |
 | customer_id      |   integer   | foreign_key: true              |
 
-- belongs_to :customer
+- belongs_to :order
 
