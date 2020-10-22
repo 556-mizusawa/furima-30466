@@ -11,5 +11,5 @@ function count() {
   });
 }
 
-addEventListener("keydown", count);
+addEventListener("lord", count);
 
