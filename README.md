@@ -14,7 +14,7 @@
 | birthday             |  date  | null: false |
 
 - has_many :items
-- has_many :customers
+- has_many :orders
 
 
 
@@ -32,7 +32,7 @@
 | price            |  integer   | null: false                    |
 | user             | references | null: false, foreign_key: true |
 
-- has_one :customers
+- has_one :orders
 - belongs_to :user 
 
 
@@ -60,7 +60,7 @@
 | house_number     |   string    | null: false                    |
 | building_name    |   string    |                                |
 | tell_number      |   integer   | null: false                    |
-| customer_id      |   integer   | foreign_key: true              |
+| order_id         |   integer   | foreign_key: true              |
 
 - belongs_to :order
 
