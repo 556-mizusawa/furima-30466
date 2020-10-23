@@ -5,7 +5,7 @@ class CustomerOrder
   with_options presence: true do
     validates :token
     validates :postal_code,   format: { with: /\A[0-9]{3}-[0-9]{4}\z/ } 
-    validates :prefecture_id, numericality: { other_than: 0 }
+    validates :prefecture_id, numericality: { other_than: 0, message: "Select" }
     validates :city
     validates :house_number
     validates :tell_number,   format: {with: /\A[a-zA-Z0-9]+\z/ }
