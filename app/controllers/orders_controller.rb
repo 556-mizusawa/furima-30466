@@ -3,6 +3,9 @@ class OrdersController < ApplicationController
   before_action :move_to_index, only:[:index, :create]
 
   def index
+    if @item.id != nil
+      redirect_to root_path 
+    end
     @customer_order = CustomerOrder.new
   end
 
