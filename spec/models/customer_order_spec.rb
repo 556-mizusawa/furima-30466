@@ -43,7 +43,7 @@ RSpec.describe CustomerOrder, type: :model do
     it "都道府県が---だと購入できない" do
       @customer_order.prefecture_id = "---"
       @customer_order.valid?
-      expect(@customer_order.errors.full_messages).to include("Prefecture is not a number")
+      expect(@customer_order.errors.full_messages).to include("Prefecture Select")
     end
 
     it "市区町村が空だと購入できない" do
