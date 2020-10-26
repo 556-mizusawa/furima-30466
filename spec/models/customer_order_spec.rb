@@ -41,7 +41,7 @@ RSpec.describe CustomerOrder, type: :model do
     end
 
     it "都道府県が---だと購入できない" do
-      @customer_order.prefecture_id = "---"
+      @customer_order.prefecture_id = 0
       @customer_order.valid?
       expect(@customer_order.errors.full_messages).to include("Prefecture Select")
     end
