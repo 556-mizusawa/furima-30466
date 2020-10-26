@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:index]
 
   def index
-    if current_user.id == @item.user_id || @item.id != nil
+    if current_user.id == @item.user_id || @item.order
       redirect_to root_path 
     end
     @customer_order = CustomerOrder.new
@@ -41,10 +41,4 @@ class OrdersController < ApplicationController
       currency: 'jpy'
     )
   end
-
-  # def move_to_index
-  #   if @item.user_id == current_user.id
-  #     redirect_to root_path
-  #   end
-  # end
 end
