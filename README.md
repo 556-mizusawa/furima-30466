@@ -32,7 +32,7 @@
 | price            |  integer   | null: false                    |
 | user             | references | null: false, foreign_key: true |
 
-- has_one :orders
+- has_one :order
 - belongs_to :user 
 
 
