@@ -58,7 +58,7 @@
 | city             |   string    | null: false                    |
 | house_number     |   string    | null: false                    |
 | building_name    |   string    |                                |
-| tell_number      |   string   | null: false                    |
+| tell_number      |   string    | null: false                    |
 | order_id         |   integer   | foreign_key: true              |
 
 - belongs_to :order
