@@ -5,13 +5,14 @@ RSpec.describe Item, type: :model do
     @item = FactoryBot.build(:item)
   end
 
+  #正常系
   context "商品出品ができる場合" do
     it "必要事項が全て記入されていれば出品ができる" do
       expect(@item).to be_valid
     end
   end
 
-#==================================================================================
+  #異常系
   context "商品出品ができない場合" do
     it "imageが空だと登録できない" do
       @item.image = nil

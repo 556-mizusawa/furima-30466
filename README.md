@@ -14,7 +14,7 @@
 | birthday             |  date  | null: false |
 
 - has_many :items
-- has_many :customers
+- has_many :orders
 
 
 
@@ -32,11 +32,11 @@
 | price            |  integer   | null: false                    |
 | user             | references | null: false, foreign_key: true |
 
-- has_one :customers
+- has_one :order
 - belongs_to :user 
 
 
-## customers テーブル
+## orders テーブル
 
 | Column           | Type        | Options                        |
 | ---------------- | ----------- | ------------------------------ |
@@ -57,10 +57,9 @@
 | prefecture_id    |   integer   | null: false                    |
 | city             |   string    | null: false                    |
 | house_number     |   string    | null: false                    |
-| house_number     |   string    | null: false                    |
 | building_name    |   string    |                                |
-| tell_number      |   integer   | null: false                    |
-| customer_id      |   integer   | foreign_key: true              |
+| tell_number      |   string    | null: false                    |
+| order_id         |   integer   | foreign_key: true              |
 
-- belongs_to :customer
+- belongs_to :order
 
