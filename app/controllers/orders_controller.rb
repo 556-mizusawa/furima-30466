@@ -1,11 +1,12 @@
 class OrdersController < ApplicationController
+  before_action :set_item, only:[:index, :create, :move_to_index]
+  before_action :move_to_index, only:[:index, :create]
+
   def index
     @customer_order = CustomerOrder.new
-    @item = Item.find(params[:item_id])
   end
 
   def create
-    @item = Item.find(params[:item_id])
     @customer_order = CustomerOrder.new(order_params)
     if @customer_order.valid?
       pay_item
@@ -25,6 +26,10 @@ class OrdersController < ApplicationController
     params.require(:item).permit(:title, :price).merge(user_id: current_user.id)
   end
 
+  def set_item
+    @item = Item.find(params[:item_id])
+  end
+
   def pay_item
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     Payjp::Charge.create(
@@ -32,5 +37,11 @@ class OrdersController < ApplicationController
       card: order_params[:token],
       currency: 'jpy'
     )
+  end
+
+  def move_to_index
+    if @item.user_id == current_user.id
+      redirect_to root_path
+    end
   end
 end
